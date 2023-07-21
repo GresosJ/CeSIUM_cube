@@ -26,7 +26,7 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setClearColor(0xffffff);
         document.body.appendChild(renderer.domElement);
-
+        
         var geometry = new THREE.BoxGeometry(2, 2, 2);
         var material = new THREE.MeshBasicMaterial({ color: 0xc65932 });
         var cube = new THREE.Mesh(geometry, material);
@@ -35,7 +35,14 @@
         cube.rotation.y = Math.PI / 4; 
         
         scene.add(cube);
-
+        
+       /*
+        var loader = new THREE.OBJLoader();
+          loader.load('/home/gjunior/Área de Trabalho/CeSIUM_cube/CeSIUM_Logo.obj', function (cube) {
+            cube.scale.set(0.5, 0.5, 0.5);
+            scene.add(cube);
+        });
+        */
         function onMouseMove(event) {
           var mouseX = (event.clientX / window.innerWidth) * 0.4 - 1;
           var mouseY = -(event.clientY / window.innerHeight) * 0.4 + 1;
